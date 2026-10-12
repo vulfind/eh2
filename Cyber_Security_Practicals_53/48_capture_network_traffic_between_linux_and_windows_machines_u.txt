@@ -1,0 +1,34 @@
+==========================================================================================
+PRACTICAL NO. 48
+CAPTURE NETWORK TRAFFIC BETWEEN LINUX AND WINDOWS MACHINES USING WIRESHARK
+==========================================================================================
+
+AIM:
+To use Wireshark to capture and analyze network traffic exchanged specifically between a Linux (Kali) VM and a Windows 10 VM in the lab.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Wireshark installed
+  2. Windows 10 VM on the same (Bridged/Host-only) network
+  3. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  4. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  5. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+Capturing cross-platform traffic between a Linux and Windows machine helps illustrate protocol differences, such as Windows' use of SMB/NetBIOS and ARP broadcasts, compared to typical Linux traffic patterns, and is useful for analyzing how specific applications communicate across the network.
+
+PROCEDURE:
+  1. Ensure Kali Linux and Windows 10 VMs are on the same network (Bridged or Host-only) and can ping each other.
+  2. Start Wireshark on Kali Linux and begin capturing on the relevant interface.
+  3. Apply a capture/display filter for the Windows VM's IP: ip.addr == <Windows-VM-IP>.
+  4. From the Windows VM, perform an action generating traffic, e.g., ping the Kali machine, or access a shared folder/website hosted on Kali.
+  5. Observe the corresponding packets appearing in Wireshark on Kali, filtered to only that host's traffic.
+  6. Examine protocol-specific traffic, e.g., ICMP, ARP, or SMB packets exchanged between the two systems.
+  7. Save the capture as a .pcap file and document the observed protocols and packet exchanges.
+
+RESULT:
+Wireshark successfully captured and isolated traffic exchanged specifically between the Kali Linux and Windows 10 VMs, including ICMP and ARP packets, confirming successful cross-platform network communication and visibility.
+
+CONCLUSION:
+This exercise demonstrates Wireshark's ability to isolate and analyze traffic between specific hosts in a mixed-OS environment, a key skill for investigating communications in real heterogeneous networks.
+
+==========================================================================================

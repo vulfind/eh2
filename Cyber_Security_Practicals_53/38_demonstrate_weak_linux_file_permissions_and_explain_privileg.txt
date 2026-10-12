@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 38
+DEMONSTRATE WEAK LINUX FILE PERMISSIONS AND EXPLAIN PRIVILEGE ESCALATION IN A LAB
+==========================================================================================
+
+AIM:
+To identify weak/misconfigured Linux file permissions on a target machine and demonstrate how they can be leveraged for privilege escalation.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux (attacker)
+  2. Metasploitable 2 or a purpose-configured Linux lab VM
+  3. Low-privilege shell access to the target (e.g., via SSH or an earlier exploit)
+
+THEORY:
+Privilege escalation refers to techniques used by an attacker, after gaining initial low-privilege access, to obtain higher-level (e.g., root) permissions. Common Linux misconfigurations include world-writable files owned by root, SUID/SGID binaries that can be abused, and scripts executed by root with weak permissions.
+
+PROCEDURE:
+  1. Obtain a low-privilege shell on the target (e.g., SSH as msfadmin, or via the SMB exploit shell from Practical 37).
+  2. Search for SUID binaries: find / -perm -4000 -type f 2>/dev/null.
+  3. Search for world-writable files owned by root: find / -writable -user root -type f 2>/dev/null.
+  4. Check sudo privileges of the current user: sudo -l.
+  5. Identify a misconfigured SUID binary or writable root-owned script as the escalation vector.
+  6. Exploit the identified misconfiguration (e.g., edit a writable root cron script to add a command, or invoke a SUID binary known to allow privilege escalation, such as an older vulnerable version) to gain root access.
+  7. Confirm escalated privileges with id or whoami, then document each step and the misconfiguration exploited.
+
+RESULT:
+A world-writable/misconfigured file or vulnerable SUID binary was identified and successfully leveraged to escalate from a low-privilege shell to root access on the target Linux machine.
+
+CONCLUSION:
+Weak Linux file permissions represent a significant local privilege-escalation risk, demonstrating why strict permission management and regular permission audits are essential system hardening practices.
+
+==========================================================================================

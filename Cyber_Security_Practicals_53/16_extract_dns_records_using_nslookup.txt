@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 16
+EXTRACT DNS RECORDS USING NSLOOKUP
+==========================================================================================
+
+AIM:
+To use the nslookup utility to query and extract various DNS records for a target domain.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux or Windows with nslookup utility
+  2. Internet connectivity
+  3. Authorized target domain
+
+THEORY:
+nslookup is a network administration command-line tool used to query the Domain Name System (DNS) to obtain domain name or IP address mapping, as well as other DNS records such as MX (mail exchange), NS (name server), and TXT records.
+
+PROCEDURE:
+  1. Open a terminal/command prompt.
+  2. Run: nslookup <target-domain.com> to get the default A record (IP address).
+  3. Run: nslookup -type=MX <target-domain.com> to retrieve mail server records.
+  4. Run: nslookup -type=NS <target-domain.com> to retrieve name server records.
+  5. Run: nslookup -type=TXT <target-domain.com> to retrieve TXT records (e.g., SPF records).
+  6. Record all retrieved DNS record types and their values.
+  7. Repeat queries against a different public DNS server (e.g., nslookup <domain> 8.8.8.8) and compare results.
+
+RESULT:
+DNS records including A, MX, NS, and TXT entries for the target domain were successfully retrieved using nslookup, revealing its hosting and mail infrastructure.
+
+CONCLUSION:
+nslookup provides quick, essential DNS reconnaissance data that helps map an organization's network and mail infrastructure during the information-gathering phase.
+
+==========================================================================================

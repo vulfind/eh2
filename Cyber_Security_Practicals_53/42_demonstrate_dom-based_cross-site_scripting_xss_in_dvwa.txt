@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 42
+DEMONSTRATE DOM-BASED CROSS-SITE SCRIPTING (XSS) IN DVWA
+==========================================================================================
+
+AIM:
+To demonstrate a DOM-based XSS vulnerability in DVWA, where the malicious payload is processed entirely within the browser's Document Object Model.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. DVWA installed and accessible
+  2. Kali Linux with a web browser
+
+THEORY:
+DOM-based XSS occurs when client-side JavaScript dynamically writes attacker-controlled data (often from the URL) directly into the page's DOM without sanitization, meaning the vulnerability exists entirely in client-side code and may not even involve the server reflecting the payload in its response.
+
+PROCEDURE:
+  1. Log in to DVWA and set security level to Low.
+  2. Navigate to the XSS (DOM) module, which contains a language selection dropdown that uses a URL parameter.
+  3. Observe the URL structure, e.g., ?default=English, and how JavaScript writes this value into the page.
+  4. Modify the URL parameter to: ?default=<script>alert('DOM XSS')</script> and load the page.
+  5. Observe the JavaScript alert executing, confirming the client-side DOM manipulation vulnerability.
+  6. Repeat the test at Medium and High security levels, observing differences in client-side filtering.
+  7. Document the payload, URL used, and the resulting behavior at each level.
+
+RESULT:
+The crafted URL parameter successfully triggered DOM-based script execution at the Low security level, with the vulnerability progressively mitigated at higher security levels through improved client-side validation.
+
+CONCLUSION:
+This exercise highlights that XSS vulnerabilities can exist purely in client-side JavaScript logic, emphasizing that both server-side and client-side input handling must be secured.
+
+==========================================================================================

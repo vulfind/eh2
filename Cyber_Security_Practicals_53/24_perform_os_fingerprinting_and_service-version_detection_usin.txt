@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 24
+PERFORM OS FINGERPRINTING AND SERVICE-VERSION DETECTION USING NMAP
+==========================================================================================
+
+AIM:
+To use Nmap's OS fingerprinting and service/version detection features to identify the target's operating system and running service versions.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed (requires sudo/root for OS detection)
+  2. Authorized target host
+
+THEORY:
+Nmap's OS detection (-O) sends a series of TCP/IP probes and compares the target's responses against its fingerprint database to guess the operating system and kernel version. Service/version detection (-sV) interacts with open ports to identify the specific application and version running (e.g., Apache 2.4.18, vsftpd 2.3.4), which is critical for identifying known vulnerabilities.
+
+PROCEDURE:
+  1. Open a terminal on Kali Linux.
+  2. Run OS detection: sudo nmap -O <target-IP>.
+  3. Review the OS guesses and confidence percentage (CPE) in the output.
+  4. Run service/version detection: nmap -sV <target-IP>.
+  5. Combine both with aggressive scan options: sudo nmap -A <target-IP> (includes -O, -sV, -sC, traceroute).
+  6. Cross-reference a discovered service version (e.g., vsftpd 2.3.4) against known CVEs for context on potential exploitation.
+  7. Document the identified OS, kernel, and service versions.
+
+RESULT:
+Nmap identified the target's operating system (e.g., Linux kernel 2.6.x) and detected running services with specific version numbers, some of which correspond to publicly known vulnerable versions.
+
+CONCLUSION:
+OS and service-version fingerprinting is a critical step that bridges reconnaissance and vulnerability assessment, as it allows testers to map discovered services to known exploits.
+
+==========================================================================================

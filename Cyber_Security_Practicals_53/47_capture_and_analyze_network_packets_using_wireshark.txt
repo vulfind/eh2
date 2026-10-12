@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 47
+CAPTURE AND ANALYZE NETWORK PACKETS USING WIRESHARK
+==========================================================================================
+
+AIM:
+To use Wireshark to capture and analyze network traffic on an interface, identifying protocols and packet details.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Wireshark installed
+  2. Active network interface with some traffic (e.g., browsing or pinging another lab VM)
+
+THEORY:
+Wireshark is a widely used open-source network protocol analyzer that captures packets traversing a network interface in real time and allows detailed inspection of each packet's headers and payload across all OSI layers, essential for troubleshooting and security analysis.
+
+PROCEDURE:
+  1. Open Wireshark on Kali Linux (may require sudo for interface access).
+  2. Select the appropriate network interface (e.g., eth0) and click 'Start Capturing'.
+  3. Generate some traffic from another terminal, e.g., ping <another-VM-IP> or browse to a website.
+  4. Observe captured packets appearing in real time in the Wireshark packet list.
+  5. Apply a display filter, e.g., icmp or http, to isolate specific traffic types.
+  6. Click on an individual packet to examine its layered details (Ethernet, IP, TCP/UDP, and application-layer data) in the packet details pane.
+  7. Stop the capture and save it as a .pcap file for later reference.
+  8. Document key observations such as protocols seen, source/destination IPs, and any plaintext data visible.
+
+RESULT:
+Wireshark successfully captured live network traffic, and applying filters allowed clear isolation and inspection of specific protocols (e.g., ICMP echo requests/replies and HTTP requests/responses).
+
+CONCLUSION:
+Wireshark provides deep visibility into network communications at the packet level, which is invaluable for diagnosing issues, verifying protocol behavior, and detecting unencrypted sensitive data in transit.
+
+==========================================================================================

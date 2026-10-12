@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 41
+DEMONSTRATE REFLECTED CROSS-SITE SCRIPTING (XSS) IN DVWA
+==========================================================================================
+
+AIM:
+To demonstrate a reflected XSS vulnerability in DVWA, where a malicious script is immediately reflected back in the server's response.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. DVWA installed and accessible
+  2. Kali Linux with a web browser
+
+THEORY:
+Reflected XSS occurs when user-supplied input is included in a web page's response without proper sanitization, and the malicious script executes immediately when the crafted URL/request is processed, typically delivered via a link the victim is tricked into clicking.
+
+PROCEDURE:
+  1. Log in to DVWA and set security level to Low.
+  2. Navigate to the XSS (Reflected) module.
+  3. Enter the test payload <script>alert('Reflected XSS')</script> into the input field and submit.
+  4. Observe the JavaScript alert box executing immediately, confirming the vulnerability.
+  5. Construct a URL-based version of the payload (e.g., ?name=<script>alert('XSS')</script>) to simulate a malicious link.
+  6. Repeat the test at Medium and High security levels, noting how input filtering blocks or alters the payload.
+  7. Document the payload, the resulting behavior, and the DVWA source code differences across levels.
+
+RESULT:
+The reflected XSS payload executed successfully at the Low security level, triggering a JavaScript alert; at Medium and High levels, input sanitization blocked or neutralized the script execution.
+
+CONCLUSION:
+This demonstration confirms the danger of unsanitized user input being reflected into HTML responses, reinforcing the need for proper output encoding and input validation to prevent script injection.
+
+==========================================================================================

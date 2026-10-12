@@ -1,0 +1,34 @@
+==========================================================================================
+PRACTICAL NO. 29
+INSTALL NESSUS AND PREPARE THE INSTALLATION PROCEDURE
+==========================================================================================
+
+AIM:
+To install and activate Nessus vulnerability scanner on Kali Linux and prepare it for use.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux
+  2. Nessus Essentials .deb package (downloaded from Tenable)
+  3. Internet connectivity
+  4. Free Nessus Essentials activation code
+
+THEORY:
+Nessus is a widely used commercial vulnerability scanner developed by Tenable that identifies missing patches, misconfigurations, and known vulnerabilities (CVEs) on target systems. The free 'Essentials' edition allows scanning of a limited number of IP addresses, suitable for lab use.
+
+PROCEDURE:
+  1. Register for a free Nessus Essentials activation code at tenable.com.
+  2. Download the Nessus .deb installer package compatible with Kali Linux (Debian-based).
+  3. Install the package: sudo dpkg -i Nessus-<version>-debian6_amd64.deb.
+  4. Start the Nessus service: sudo systemctl start nessusd.
+  5. Open a browser and navigate to https://localhost:8834 to access the Nessus web interface.
+  6. Accept the self-signed certificate warning and proceed to initial setup.
+  7. Create an admin account and enter the activation code received via email.
+  8. Wait for Nessus to download the latest plugin feed (this may take several minutes).
+
+RESULT:
+Nessus was successfully installed, activated with a valid Essentials license, and its plugin feed was fully updated, confirming readiness for vulnerability scanning.
+
+CONCLUSION:
+Installing Nessus provides access to an industry-standard vulnerability scanning engine, forming the foundation for systematic vulnerability assessment in later exercises.
+
+==========================================================================================

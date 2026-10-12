@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 40
+INSTALL DVWA AND PERFORM SQL INJECTION TESTING
+==========================================================================================
+
+AIM:
+To perform SQL Injection testing against the DVWA SQL Injection module to demonstrate database query manipulation.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. DVWA installed and accessible (see Practical 7)
+  2. Kali Linux with a web browser
+
+THEORY:
+SQL Injection (SQLi) is a code-injection technique that exploits insufficient input validation in an application's database layer, allowing an attacker to insert or alter SQL queries. This can lead to unauthorized data access, authentication bypass, or even full database compromise.
+
+PROCEDURE:
+  1. Log in to DVWA and set the security level to Low.
+  2. Navigate to the SQL Injection module and enter a User ID field.
+  3. Test with the payload: 1' OR '1'='1 and submit, observing that all user records are returned instead of just one.
+  4. Use UNION-based injection to extract database version: 1' UNION SELECT database(), version() -- -.
+  5. Enumerate table names: 1' UNION SELECT table_name, NULL FROM information_schema.tables -- -.
+  6. Extract sensitive column data (e.g., usernames and password hashes) using further UNION SELECT statements.
+  7. Repeat the test at Medium and High security levels to observe how input sanitization affects the attack.
+  8. Document each payload used and the corresponding data extracted.
+
+RESULT:
+SQL Injection payloads successfully bypassed authentication logic and extracted database schema and user credential data at the Low security level; the attack was progressively mitigated at Medium and High levels.
+
+CONCLUSION:
+This exercise confirms that improper input validation in SQL queries can lead to severe data breaches, and demonstrates how parameterized queries and input sanitization (as used in DVWA's higher security levels) prevent such attacks.
+
+==========================================================================================

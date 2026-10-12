@@ -1,0 +1,36 @@
+==========================================================================================
+PRACTICAL NO. 5
+INSTALL AND CONFIGURE KALI LINUX IN VMWARE WORKSTATION
+==========================================================================================
+
+AIM:
+To install and configure Kali Linux as a guest operating system using VMware Workstation.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. VMware Workstation Player/Pro
+  2. Kali Linux ISO/VMware image
+  3. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  4. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  5. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+VMware Workstation is a Type-2 hypervisor similar to VirtualBox but with different performance characteristics and driver support, often offering smoother graphics and better hardware-virtualization integration, useful to compare with VirtualBox.
+
+PROCEDURE:
+  1. Install VMware Workstation on the host machine.
+  2. Open VMware Workstation and select 'Create a New Virtual Machine'.
+  3. Choose 'Installer disc image file (ISO)' and browse to the Kali Linux ISO.
+  4. Select Guest OS: Linux, Version: Debian 64-bit.
+  5. Name the VM and choose the installation location.
+  6. Allocate disk size (20+ GB) and select 'Store virtual disk as a single file'.
+  7. Customize hardware: set RAM to 2048+ MB and CPU cores as needed, then finish.
+  8. Power on the VM and complete the Kali installer steps (language, partitioning, user account).
+  9. Install VMware Tools after installation for better display and shared folder support.
+
+RESULT:
+Kali Linux was successfully installed in VMware Workstation, with the desktop environment and tools verified to work correctly.
+
+CONCLUSION:
+A second hypervisor-based Kali Linux environment was successfully set up, enabling comparison of performance and configuration against the VirtualBox installation.
+
+==========================================================================================

@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 39
+DEMONSTRATE WEAK WINDOWS FILE PERMISSIONS AND EXPLAIN PRIVILEGE ESCALATION IN A LAB
+==========================================================================================
+
+AIM:
+To identify weak/misconfigured Windows file and service permissions and demonstrate how they can be leveraged for privilege escalation.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux (attacker)
+  2. Windows 10 VM configured as a lab target
+  3. Low-privilege user account on the Windows VM
+
+THEORY:
+On Windows, privilege escalation often exploits misconfigured service permissions (e.g., a service binary or its path is writable by a standard user, even though the service runs as SYSTEM), weak folder/file ACLs, or unquoted service paths, allowing a low-privileged user to replace or hijack a file executed with elevated privileges.
+
+PROCEDURE:
+  1. Log in to the Windows 10 VM with a standard (non-admin) user account.
+  2. Enumerate services and their executable permissions using 'accesschk' (Sysinternals) or PowerShell: Get-Acl on a service binary path.
+  3. Identify a service configured to run as 'LocalSystem' whose executable file/folder is writable by the current low-privileged user (deliberately misconfigured for this lab).
+  4. Replace or modify the writable service executable with a test payload (e.g., a script that creates a new local admin user) for demonstration purposes.
+  5. Restart the vulnerable service (or trigger it, if permitted) to execute the payload with SYSTEM privileges.
+  6. Confirm privilege escalation by checking for the newly created administrative account or elevated shell.
+  7. Document the misconfigured service, the ACL weakness, and the escalation method used.
+
+RESULT:
+A deliberately misconfigured Windows service with writable permissions for a standard user was identified and exploited to execute a payload with SYSTEM privileges, demonstrating successful privilege escalation.
+
+CONCLUSION:
+Weak Windows service/file permissions are a common real-world privilege-escalation vector, highlighting the importance of strict ACL configuration and the principle of least privilege for service accounts.
+
+==========================================================================================

@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 13
+PERFORM SOCIAL MEDIA INTELLIGENCE GATHERING USING MALTEGO
+==========================================================================================
+
+AIM:
+To use Maltego to perform social media intelligence (SOCMINT) gathering and visualize relationships for a target entity.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Maltego (Community Edition) installed
+  2. Maltego account (free registration required)
+  3. Internet connectivity
+
+THEORY:
+Maltego is a graphical link-analysis tool used for OSINT and forensic investigations. It represents entities (people, domains, emails, social media accounts) as nodes and uses 'transforms' to query public data sources, visually mapping relationships between them, which is valuable for understanding an organization's digital footprint.
+
+PROCEDURE:
+  1. Launch Maltego and log in/register for the Community Edition (CE).
+  2. Create a new graph and drag a 'Domain' or 'Person' entity onto the canvas.
+  3. Set the entity value to the authorized target (domain or organization name).
+  4. Right-click the entity and run relevant transforms (e.g., 'To DNS Name', 'To Email addresses', 'To Social Network profiles').
+  5. Observe the graph expand with linked entities such as subdomains, emails, and social profiles.
+  6. Apply additional transforms on interesting nodes to deepen the investigation.
+  7. Export or screenshot the resulting entity graph for the report.
+
+RESULT:
+Maltego generated a visual graph linking the target domain to associated subdomains, email addresses, and social media profiles, illustrating the organization's online footprint.
+
+CONCLUSION:
+Maltego's graphical transform-based approach makes it easier to visualize complex relationships between OSINT data points compared to plain text-based tools.
+
+==========================================================================================

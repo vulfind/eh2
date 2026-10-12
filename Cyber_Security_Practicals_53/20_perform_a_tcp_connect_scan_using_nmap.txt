@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 20
+PERFORM A TCP CONNECT SCAN USING NMAP
+==========================================================================================
+
+AIM:
+To perform a TCP Connect scan using Nmap to identify open TCP ports on a target host.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed
+  2. Metasploitable 2 (or other authorized target) on the same network
+
+THEORY:
+A TCP Connect scan (-sT) completes the full TCP three-way handshake (SYN, SYN-ACK, ACK) with each target port, making it reliable but easily logged by the target, unlike the stealthier SYN scan. It does not require root privileges, unlike raw-socket scans.
+
+PROCEDURE:
+  1. Identify the target IP address (ifconfig on Metasploitable or netdiscover from Kali).
+  2. Open a terminal on Kali Linux.
+  3. Run: nmap -sT <target-IP>.
+  4. Review the output listing open, closed, and filtered ports.
+  5. Run a more detailed scan with service versions: nmap -sT -sV <target-IP>.
+  6. Save results to file: nmap -sT -oN tcp_connect_results.txt <target-IP>.
+  7. Document all discovered open ports and associated services.
+
+RESULT:
+The TCP Connect scan successfully identified multiple open ports (e.g., 21, 22, 23, 80, 3306) on the target, each completing a full handshake and confirming active, connectable services.
+
+CONCLUSION:
+The TCP Connect scan reliably enumerates open ports by completing full TCP handshakes, serving as a foundational reconnaissance technique, though it is more detectable than stealth scan types.
+
+==========================================================================================

@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 25
+IDENTIFY OPEN PORTS AND SERVICES ON METASPLOITABLE 2 USING NMAP
+==========================================================================================
+
+AIM:
+To perform a comprehensive Nmap scan against Metasploitable 2 to identify all open ports and the services running on them.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed
+  2. Metasploitable 2 VM running on the same network
+
+THEORY:
+Metasploitable 2 intentionally runs many outdated and vulnerable network services (FTP, Telnet, SSH, SMTP, DNS, HTTP, SMB, MySQL, and more) for training purposes. A full port and service scan is the essential first step before attempting any exploitation against this machine.
+
+PROCEDURE:
+  1. Identify the Metasploitable IP using ifconfig on the target or netdiscover on Kali.
+  2. Run a full TCP port scan: nmap -p- <target-IP>.
+  3. Run service/version detection on discovered ports: nmap -sV -p <discovered-ports> <target-IP>.
+  4. Run a default script scan for additional detail: nmap -sC -sV <target-IP>.
+  5. Record each open port with its associated service and version (e.g., 21/ftp vsftpd 2.3.4, 23/telnet, 3306/mysql).
+  6. Cross-reference notable services with the Metasploit Framework's module database for later exploitation practice.
+  7. Save the full scan output to a report file: nmap -sC -sV -oN metasploitable_scan.txt <target-IP>.
+
+RESULT:
+A complete list of open ports and associated vulnerable service versions on Metasploitable 2 was identified, forming a target map for subsequent exploitation exercises.
+
+CONCLUSION:
+A full port and service scan of Metasploitable 2 confirmed the intentionally vulnerable nature of the machine and provided the necessary groundwork for planning further exploitation in later practicals.
+
+==========================================================================================

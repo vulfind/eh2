@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 21
+PERFORM A UDP SCAN USING NMAP
+==========================================================================================
+
+AIM:
+To perform a UDP scan using Nmap to identify open UDP ports and services on a target host.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed (run with sudo/root)
+  2. Authorized target host on the same network
+
+THEORY:
+UDP is a connectionless protocol, so a UDP scan cannot rely on a handshake to confirm an open port; Nmap instead sends empty UDP packets and interprets ICMP 'port unreachable' responses (closed) versus no response (open|filtered) or a service-specific response (open) to infer port state. UDP scans are typically slower than TCP scans.
+
+PROCEDURE:
+  1. Open a terminal on Kali Linux with root privileges.
+  2. Run: sudo nmap -sU <target-IP> (scans the top 1000 UDP ports by default).
+  3. For faster results on common ports: sudo nmap -sU -p 53,67,68,69,123,161,500 <target-IP>.
+  4. Add version detection: sudo nmap -sU -sV <target-IP>.
+  5. Review the results noting 'open', 'open|filtered', and 'closed' port states.
+  6. Cross-verify a discovered open UDP port (e.g., 161/SNMP) with its specific enumeration tool.
+  7. Document scan duration and results, noting the slower speed compared to a TCP scan.
+
+RESULT:
+The UDP scan identified several open or open|filtered UDP ports (e.g., 53/DNS, 161/SNMP) on the target host, taking noticeably longer than the equivalent TCP scan.
+
+CONCLUSION:
+UDP scanning is essential for a complete port/service inventory since many critical services (DNS, SNMP, NTP) run over UDP, despite the scan being inherently slower and less certain than TCP scanning.
+
+==========================================================================================

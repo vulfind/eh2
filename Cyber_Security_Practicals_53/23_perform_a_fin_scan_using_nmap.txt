@@ -1,0 +1,30 @@
+==========================================================================================
+PRACTICAL NO. 23
+PERFORM A FIN SCAN USING NMAP
+==========================================================================================
+
+AIM:
+To perform a FIN scan using Nmap to identify open ports while attempting to evade basic firewall/IDS detection.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed (requires sudo/root)
+  2. Authorized target host on the same network
+
+THEORY:
+A FIN scan (-sF) sends a TCP packet with only the FIN flag set, without initiating a handshake. According to RFC 793, closed ports should respond with a RST, while open ports should (on compliant stacks) simply drop the packet and not respond. This makes the scan stealthier against simple stateless packet-filtering firewalls, though modern stateful firewalls and some OSes (notably Windows) do not follow this behavior and will show all ports as closed/filtered.
+
+PROCEDURE:
+  1. Open a terminal on Kali Linux.
+  2. Run: sudo nmap -sF <target-IP>.
+  3. Compare results against the earlier SYN scan (-sS) on the same target to verify consistency.
+  4. Repeat the scan against a Windows target (if available) and note that results may be unreliable/inaccurate, consistent with Windows' non-RFC-793-compliant TCP stack.
+  5. Document which ports reported as open, closed, or filtered.
+  6. Note any differences in firewall/IDS behavior observed, if logging is available.
+
+RESULT:
+On the Linux-based Metasploitable target, the FIN scan correctly identified open ports consistent with earlier scans; against a Windows-based target, most ports incorrectly reported as closed/filtered, demonstrating the scan's OS-dependent reliability.
+
+CONCLUSION:
+FIN scans can be effective for evading simple stateless filters on Unix-like systems but are unreliable against Windows hosts, underscoring the importance of using multiple scan types for accurate reconnaissance.
+
+==========================================================================================

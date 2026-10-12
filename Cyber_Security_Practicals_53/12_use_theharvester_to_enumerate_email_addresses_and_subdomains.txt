@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 12
+USE THEHARVESTER TO ENUMERATE EMAIL ADDRESSES AND SUBDOMAINS
+==========================================================================================
+
+AIM:
+To use theHarvester tool to enumerate email addresses, subdomains, and hosts related to a target domain.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with theHarvester installed
+  2. Internet connectivity
+  3. Authorized target domain
+
+THEORY:
+theHarvester is an OSINT tool used to gather emails, subdomains, hosts, employee names, open ports, and banners from different public sources such as search engines, PGP key servers, and certificate transparency logs. It is widely used in the reconnaissance phase of penetration testing.
+
+PROCEDURE:
+  1. Open a terminal in Kali Linux.
+  2. Run: theHarvester -d <target-domain.com> -b all (or specify sources like -b google,bing,crtsh).
+  3. Wait for the tool to query the selected data sources.
+  4. Review the output for discovered email addresses and subdomains/hosts.
+  5. Optionally save results to a file using the -f <filename> flag for later reporting.
+  6. Cross-verify a few discovered subdomains by resolving them with nslookup/dig.
+
+RESULT:
+theHarvester returned a list of email addresses and subdomains associated with the target domain, several of which were verified as resolvable hosts.
+
+CONCLUSION:
+theHarvester efficiently automates OSINT collection from multiple public sources, significantly speeding up subdomain and email enumeration during reconnaissance.
+
+==========================================================================================

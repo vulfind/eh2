@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 11
+COLLECT EMAIL ADDRESSES AND PHONE NUMBERS FROM WEBSITES USING OSINT TOOLS
+==========================================================================================
+
+AIM:
+To use OSINT techniques/tools to collect publicly available email addresses and phone numbers associated with a target organization.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux
+  2. theHarvester / Recon-ng / manual search engine dorking
+  3. Internet connectivity
+  4. Authorized target organization
+
+THEORY:
+Open Source Intelligence (OSINT) gathering involves collecting publicly available information about a target that can later be used for social engineering assessments or to map an organization's attack surface. Contact information such as email addresses and phone numbers is commonly found on company websites, social media, and indexed search results.
+
+PROCEDURE:
+  1. Visit the target organization's official website and review 'Contact Us', 'About', and 'Team' pages for emails/phone numbers.
+  2. Use theHarvester to automate email discovery: theHarvester -d <target-domain.com> -b google (or other supported sources).
+  3. Use search-engine dorking, e.g., site:<domain.com> "email" OR "contact", to locate additional pages.
+  4. Cross-reference findings with LinkedIn company pages for employee names tied to the organization.
+  5. Compile a list of collected emails and phone numbers into a report.
+  6. Note data sources for each piece of information for traceability.
+
+RESULT:
+A list of publicly available email addresses and contact numbers associated with the target organization was successfully compiled using automated tools and manual search techniques.
+
+CONCLUSION:
+OSINT-based contact harvesting demonstrates how much information is exposed through public web presence, highlighting the organizational risk of social-engineering and phishing attacks.
+
+==========================================================================================

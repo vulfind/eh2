@@ -1,0 +1,56 @@
+CYBER SECURITY PRACTICAL EXAM - FINAL LIST OF 53 PRACTICALS
+============================================================
+
+ 1. Install and Configure Kali Linux in Oracle VirtualBox  ->  01_install_and_configure_kali_linux_in_oracle_virtualbox.txt
+ 2. Install and Configure Windows 10 in VirtualBox  ->  02_install_and_configure_windows_10_in_virtualbox.txt
+ 3. Install and Configure Metasploitable 2 in VirtualBox  ->  03_install_and_configure_metasploitable_2_in_virtualbox.txt
+ 4. Test NAT and Bridged Networking in VirtualBox  ->  04_test_nat_and_bridged_networking_in_virtualbox.txt
+ 5. Install and Configure Kali Linux in VMware Workstation  ->  05_install_and_configure_kali_linux_in_vmware_workstation.txt
+ 6. Compare Kali Linux Installation in VMware and VirtualBox  ->  06_compare_kali_linux_installation_in_vmware_and_virtualbox.txt
+ 7. Install DVWA on a Virtual Machine and Test Access from Kali Linux  ->  07_install_dvwa_on_a_virtual_machine_and_test_access_from_kali_.txt
+ 8. Configure DVWA Security Levels: Low, Medium, and High  ->  08_configure_dvwa_security_levels_low_medium_and_high.txt
+ 9. Perform WHOIS Lookup Using a Command-Line Tool or Website  ->  09_perform_whois_lookup_using_a_command-line_tool_or_website.txt
+10. Perform Basic Reconnaissance Using Recon-ng  ->  10_perform_basic_reconnaissance_using_recon-ng.txt
+11. Collect Email Addresses and Phone Numbers from Websites Using OSINT Tools  ->  11_collect_email_addresses_and_phone_numbers_from_websites_usin.txt
+12. Use theHarvester to Enumerate Email Addresses and Subdomains  ->  12_use_theharvester_to_enumerate_email_addresses_and_subdomains.txt
+13. Perform Social Media Intelligence Gathering Using Maltego  ->  13_perform_social_media_intelligence_gathering_using_maltego.txt
+14. Perform Passive Reconnaissance Using Shodan  ->  14_perform_passive_reconnaissance_using_shodan.txt
+15. Use Google Dorking to Find Publicly Indexed Files and Directories  ->  15_use_google_dorking_to_find_publicly_indexed_files_and_direct.txt
+16. Extract DNS Records Using nslookup  ->  16_extract_dns_records_using_nslookup.txt
+17. Perform DNS Enumeration Using the dig Command  ->  17_perform_dns_enumeration_using_the_dig_command.txt
+18. Enumerate SMB Protocol Information  ->  18_enumerate_smb_protocol_information.txt
+19. Enumerate SNMP Using Nmap or SNMPwalk  ->  19_enumerate_snmp_using_nmap_or_snmpwalk.txt
+20. Perform a TCP Connect Scan Using Nmap  ->  20_perform_a_tcp_connect_scan_using_nmap.txt
+21. Perform a UDP Scan Using Nmap  ->  21_perform_a_udp_scan_using_nmap.txt
+22. Perform a SYN Scan Using Nmap  ->  22_perform_a_syn_scan_using_nmap.txt
+23. Perform a FIN Scan Using Nmap  ->  23_perform_a_fin_scan_using_nmap.txt
+24. Perform OS Fingerprinting and Service-Version Detection Using Nmap  ->  24_perform_os_fingerprinting_and_service-version_detection_usin.txt
+25. Identify Open Ports and Services on Metasploitable 2 Using Nmap  ->  25_identify_open_ports_and_services_on_metasploitable_2_using_n.txt
+26. Use Nmap to Discover Live Hosts in an Authorized Lab Network  ->  26_use_nmap_to_discover_live_hosts_in_an_authorized_lab_network.txt
+27. Generate a Network Topology Map Using Nmap Scripting  ->  27_generate_a_network_topology_map_using_nmap_scripting.txt
+28. Use Netcat to Identify Open Ports and Services  ->  28_use_netcat_to_identify_open_ports_and_services.txt
+29. Install Nessus and Prepare the Installation Procedure  ->  29_install_nessus_and_prepare_the_installation_procedure.txt
+30. Perform Vulnerability Scanning Using Nessus and Prepare a Report  ->  30_perform_vulnerability_scanning_using_nessus_and_prepare_a_re.txt
+31. Perform Vulnerability Scanning Using OpenVAS and Generate a Report  ->  31_perform_vulnerability_scanning_using_openvas_and_generate_a_.txt
+32. Identify and Demonstrate the OWASP Top 10 Vulnerabilities in DVWA  ->  32_identify_and_demonstrate_the_owasp_top_10_vulnerabilities_in.txt
+33. Crack Password Hashes Using John the Ripper  ->  33_crack_password_hashes_using_john_the_ripper.txt
+34. Test Password Hashes Using Hashcat  ->  34_test_password_hashes_using_hashcat.txt
+35. Perform Authorized SSH Password-Strength Testing Using Hydra  ->  35_perform_authorized_ssh_password-strength_testing_using_hydra.txt
+36. Perform a Login Brute-Force Test on the DVWA Login Page Using Burp Suite Intruder  ->  36_perform_a_login_brute-force_test_on_the_dvwa_login_page_usin.txt
+37. Demonstrate an SMB Vulnerability Using Metasploit in Metasploitable 2  ->  37_demonstrate_an_smb_vulnerability_using_metasploit_in_metaspl.txt
+38. Demonstrate Weak Linux File Permissions and Explain Privilege Escalation in a Lab  ->  38_demonstrate_weak_linux_file_permissions_and_explain_privileg.txt
+39. Demonstrate Weak Windows File Permissions and Explain Privilege Escalation in a Lab  ->  39_demonstrate_weak_windows_file_permissions_and_explain_privil.txt
+40. Install DVWA and Perform SQL Injection Testing  ->  40_install_dvwa_and_perform_sql_injection_testing.txt
+41. Demonstrate Reflected Cross-Site Scripting (XSS) in DVWA  ->  41_demonstrate_reflected_cross-site_scripting_xss_in_dvwa.txt
+42. Demonstrate DOM-Based Cross-Site Scripting (XSS) in DVWA  ->  42_demonstrate_dom-based_cross-site_scripting_xss_in_dvwa.txt
+43. Demonstrate Stored Cross-Site Scripting (XSS) Using a Persistent Test Payload in DVWA  ->  43_demonstrate_stored_cross-site_scripting_xss_using_a_persiste.txt
+44. Demonstrate Cross-Site Request Forgery (CSRF) in DVWA Using a Controlled Test Account  ->  44_demonstrate_cross-site_request_forgery_csrf_in_dvwa_using_a_.txt
+45. Test the DVWA File-Upload Vulnerability Using a Harmless Test File  ->  45_test_the_dvwa_file-upload_vulnerability_using_a_harmless_tes.txt
+46. Test DVWA Security Filters Using Modified HTTP Requests in Burp Suite in the Authorized Lab  ->  46_test_dvwa_security_filters_using_modified_http_requests_in_b.txt
+47. Capture and Analyze Network Packets Using Wireshark  ->  47_capture_and_analyze_network_packets_using_wireshark.txt
+48. Capture Network Traffic Between Linux and Windows Machines Using Wireshark  ->  48_capture_network_traffic_between_linux_and_windows_machines_u.txt
+49. Demonstrate ARP Spoofing and Man-in-the-Middle Concepts Using Bettercap in an Isolated Lab  ->  49_demonstrate_arp_spoofing_and_man-in-the-middle_concepts_usin.txt
+50. Find Web Application Vulnerabilities Using Nikto  ->  50_find_web_application_vulnerabilities_using_nikto.txt
+51. Use Netcat to Identify Open Ports and Services (Extended/Advanced Usage)  ->  51_use_netcat_to_identify_open_ports_and_services_extendedadvan.txt
+52. Demonstrate Basic Linux Commands Useful for Penetration Testing  ->  52_demonstrate_basic_linux_commands_useful_for_penetration_test.txt
+53. Explain the Use of Mimikatz for Windows Credential-Security Auditing in an Authorized Lab  ->  53_explain_the_use_of_mimikatz_for_windows_credential-security_.txt

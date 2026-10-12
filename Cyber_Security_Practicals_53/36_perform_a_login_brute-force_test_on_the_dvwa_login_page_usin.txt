@@ -1,0 +1,34 @@
+==========================================================================================
+PRACTICAL NO. 36
+PERFORM A LOGIN BRUTE-FORCE TEST ON THE DVWA LOGIN PAGE USING BURP SUITE INTRUDER
+==========================================================================================
+
+AIM:
+To use Burp Suite's Intruder module to perform an authorized brute-force attack against the DVWA login form.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Burp Suite Community Edition
+  2. DVWA installed and accessible
+  3. Firefox configured to proxy through Burp Suite
+  4. Username/password wordlists
+
+THEORY:
+Burp Suite is a web application security testing proxy that intercepts and manipulates HTTP requests. Its Intruder tool can automate sending many requests with varying payloads (such as password guesses) to a target parameter, making it well-suited for testing login form brute-force resistance.
+
+PROCEDURE:
+  1. Configure Firefox to use Burp Suite's proxy (127.0.0.1:8080) and install Burp's CA certificate.
+  2. With DVWA's Brute Force module open and intercept ON in Burp, submit a test login attempt.
+  3. Capture the POST request in Burp Proxy > Intercept and send it to Intruder (Ctrl+I).
+  4. In the Intruder 'Positions' tab, clear default markers and mark only the password parameter value as the payload position.
+  5. Set Attack type to 'Sniper'.
+  6. In the 'Payloads' tab, load a password wordlist as the payload set.
+  7. Start the attack (Intruder > Start Attack) and observe the results table.
+  8. Identify the successful login attempt by comparing response length/status code differences, then document the finding.
+
+RESULT:
+Burp Suite Intruder systematically tested the password wordlist against the DVWA login form and identified the correct password based on a distinct response length, confirming a successful brute-force attack.
+
+CONCLUSION:
+This exercise demonstrates how automated tools like Burp Intruder can efficiently brute-force poorly protected login forms, emphasizing the need for CAPTCHAs, account lockouts, and rate limiting.
+
+==========================================================================================

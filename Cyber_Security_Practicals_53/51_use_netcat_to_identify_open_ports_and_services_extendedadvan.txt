@@ -1,0 +1,30 @@
+==========================================================================================
+PRACTICAL NO. 51
+USE NETCAT TO IDENTIFY OPEN PORTS AND SERVICES (EXTENDED/ADVANCED USAGE)
+==========================================================================================
+
+AIM:
+To further use Netcat for advanced tasks including banner grabbing, simple file transfer, and basic listener/connection testing to reinforce port/service identification skills.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Netcat installed
+  2. Second lab VM (e.g., Metasploitable 2) for listener/transfer demonstration
+
+THEORY:
+Beyond simple port scanning (covered in Practical 28), Netcat can act as both a client and a 'listener' (server), enabling use cases such as setting up a basic chat/listener, transferring files between two hosts, and manually interacting with text-based protocols to confirm service behavior — all valuable for verifying findings from automated scanners.
+
+PROCEDURE:
+  1. On the target/second VM, start a Netcat listener on a chosen port: nc -lvp 4444.
+  2. From Kali, connect to that listener: nc <target-IP> 4444, and exchange simple test messages between the two terminals to confirm connectivity.
+  3. Demonstrate a basic file transfer: on the receiving end run nc -lvp 4444 > received.txt, and on the sending end run nc <target-IP> 4444 < testfile.txt.
+  4. Verify the received file matches the original using md5sum on both ends.
+  5. Manually interact with a known open text-based service (e.g., the FTP banner on port 21) by connecting with nc <target-IP> 21 and issuing a command like USER test.
+  6. Document each use case demonstrated and its result.
+
+RESULT:
+Netcat was successfully used to establish a listener/client connection, transfer a file between the two lab VMs (verified identical via md5sum), and manually interact with a service banner, confirming its versatility beyond simple scanning.
+
+CONCLUSION:
+Netcat's dual client/listener capability makes it an extremely versatile tool for connectivity testing, manual protocol interaction, and simple file transfer during penetration testing engagements.
+
+==========================================================================================

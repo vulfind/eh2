@@ -1,0 +1,36 @@
+==========================================================================================
+PRACTICAL NO. 1
+INSTALL AND CONFIGURE KALI LINUX IN ORACLE VIRTUALBOX
+==========================================================================================
+
+AIM:
+To install and configure Kali Linux as a guest operating system using Oracle VirtualBox.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Oracle VirtualBox (latest version)
+  2. Kali Linux ISO/OVA image
+  3. Host OS: Windows/Linux
+  4. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  5. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  6. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+Kali Linux is a Debian-based Linux distribution designed for penetration testing and digital forensics, pre-loaded with hundreds of security tools. VirtualBox is a Type-2 hypervisor that allows multiple operating systems to run as isolated virtual machines (VMs) on a single host, which is essential for building a safe, isolated lab environment for cybersecurity practice.
+
+PROCEDURE:
+  1. Download and install Oracle VirtualBox on the host machine.
+  2. Download the Kali Linux ISO (or pre-built VirtualBox image) from the official Kali website.
+  3. Open VirtualBox, click 'New', name the VM 'Kali Linux', select Type=Linux, Version=Debian (64-bit).
+  4. Allocate RAM (minimum 2048 MB) and create a virtual hard disk (minimum 20 GB, dynamically allocated).
+  5. Attach the Kali ISO to the virtual optical drive under Settings > Storage.
+  6. Start the VM and follow the guided installer: select language, keyboard layout, partition disk (Guided - use entire disk), set hostname and user credentials.
+  7. Complete installation, remove the ISO from the virtual drive, and reboot into Kali Linux.
+  8. Install VirtualBox Guest Additions for better display resolution and shared clipboard.
+
+RESULT:
+Kali Linux was successfully installed and configured as a VirtualBox guest machine. The VM booted into the Kali desktop environment and the terminal, along with pre-installed security tools, was verified to be functional.
+
+CONCLUSION:
+A fully functional Kali Linux virtual machine was set up, providing an isolated environment for performing penetration testing and ethical hacking exercises without affecting the host system.
+
+==========================================================================================

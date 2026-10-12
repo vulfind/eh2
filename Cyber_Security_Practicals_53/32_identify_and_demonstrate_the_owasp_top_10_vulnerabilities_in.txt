@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 32
+IDENTIFY AND DEMONSTRATE THE OWASP TOP 10 VULNERABILITIES IN DVWA
+==========================================================================================
+
+AIM:
+To identify and demonstrate examples of OWASP Top 10 web application vulnerabilities using DVWA as the test platform.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. DVWA installed and accessible
+  2. Kali Linux with a web browser and Burp Suite (optional)
+
+THEORY:
+The OWASP Top 10 is a standard awareness document listing the most critical web application security risks, including Injection (e.g., SQL Injection), Broken Authentication, Cross-Site Scripting (XSS), Security Misconfiguration, and others. DVWA deliberately implements several of these vulnerabilities for hands-on learning.
+
+PROCEDURE:
+  1. Log in to DVWA and set security level to Low for initial demonstration.
+  2. Demonstrate Injection: use the SQL Injection module with payload 1' OR '1'='1 to bypass query logic.
+  3. Demonstrate Broken Authentication: test the Brute Force module with weak credentials using a simple word list.
+  4. Demonstrate XSS: inject <script>alert('XSS')</script> into the Reflected/Stored XSS modules.
+  5. Demonstrate Security Misconfiguration: review DVWA's default/verbose error messages and configuration page.
+  6. Demonstrate Insecure File Upload: upload a test (harmless) file with an unexpected extension in the Upload module.
+  7. Demonstrate CSRF: use the CSRF module to change an account password via a crafted request/link.
+  8. Document each vulnerability category, the payload used, and the observed result with screenshots.
+
+RESULT:
+Multiple OWASP Top 10 vulnerability categories, including SQL Injection, XSS, CSRF, and Insecure File Upload, were successfully demonstrated and documented within the DVWA environment.
+
+CONCLUSION:
+Hands-on demonstration of OWASP Top 10 vulnerabilities in DVWA reinforces theoretical understanding of common web application risks and the attack techniques used to exploit them.
+
+==========================================================================================

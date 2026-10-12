@@ -1,0 +1,30 @@
+==========================================================================================
+PRACTICAL NO. 28
+USE NETCAT TO IDENTIFY OPEN PORTS AND SERVICES
+==========================================================================================
+
+AIM:
+To use Netcat (nc) as a lightweight tool to manually check for open ports and grab service banners on a target host.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Netcat (nc) installed
+  2. Authorized target host (e.g., Metasploitable 2)
+
+THEORY:
+Netcat is often called the 'Swiss-army knife' of networking tools. It can create raw TCP/UDP connections, making it useful for manual port checking, banner grabbing, and even simple file transfers or reverse shells (in authorized testing only).
+
+PROCEDURE:
+  1. Open a terminal on Kali Linux.
+  2. Check a single port for connectivity: nc -zv <target-IP> 22 (the -z flag scans without sending data, -v is verbose).
+  3. Scan a range of ports: nc -zv <target-IP> 20-100.
+  4. Grab a service banner by connecting directly: nc <target-IP> 21 and observe the FTP banner returned.
+  5. Repeat banner grabbing on other open ports (e.g., 22/SSH, 25/SMTP) to identify service versions.
+  6. Document each open port along with any banner information retrieved.
+
+RESULT:
+Netcat successfully confirmed open ports on the target and retrieved service banners (e.g., the FTP server version), matching the results obtained from the earlier Nmap scans.
+
+CONCLUSION:
+Netcat is a versatile, lightweight alternative to Nmap for manual port checking and banner grabbing, useful when a quick, simple, and script-friendly tool is needed.
+
+==========================================================================================

@@ -1,0 +1,33 @@
+==========================================================================================
+PRACTICAL NO. 44
+DEMONSTRATE CROSS-SITE REQUEST FORGERY (CSRF) IN DVWA USING A CONTROLLED TEST ACCOUNT
+==========================================================================================
+
+AIM:
+To demonstrate a Cross-Site Request Forgery (CSRF) attack in DVWA using a controlled test account to change a password without user consent.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. DVWA installed and accessible
+  2. Kali Linux with a web browser
+  3. A dedicated DVWA test account (not a production account)
+
+THEORY:
+CSRF is an attack that tricks an authenticated user's browser into unknowingly submitting a malicious request to a web application in which they are currently logged in, exploiting the trust the application has in the user's browser/session, often via a disguised link or auto-submitting HTML form.
+
+PROCEDURE:
+  1. Log in to DVWA with the controlled test account and set security level to Low.
+  2. Navigate to the CSRF module and observe the password-change form's URL/GET parameters (e.g., ?password_new=x&password_conf=x&Change=Change).
+  3. Craft a malicious HTML page (for lab use) containing a hidden auto-submitting form or link pointing to this URL with a new password of the attacker's choosing.
+  4. While still logged in to DVWA in the same browser, open the crafted malicious page.
+  5. Observe that the DVWA account password is changed without the user explicitly submitting the legitimate form.
+  6. Attempt to log in to DVWA with the new (attacker-set) password to confirm success.
+  7. Repeat at Medium/High security level, noting how CSRF tokens (present at High level) block the attack.
+  8. Document each step, the crafted HTML used, and the outcome at each security level.
+
+RESULT:
+At the Low security level, the crafted cross-site request successfully changed the test account's password without explicit user consent; at the High security level, the presence of an anti-CSRF token blocked the forged request.
+
+CONCLUSION:
+This exercise demonstrates how the absence of anti-CSRF tokens allows attackers to perform unauthorized state-changing actions on behalf of an authenticated user, reinforcing CSRF tokens as an essential defense mechanism.
+
+==========================================================================================

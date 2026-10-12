@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 17
+PERFORM DNS ENUMERATION USING THE DIG COMMAND
+==========================================================================================
+
+AIM:
+To use the dig (Domain Information Groper) command to perform detailed DNS enumeration on a target domain.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with dig (dnsutils package) installed
+  2. Internet connectivity
+  3. Authorized target domain
+
+THEORY:
+dig is a flexible DNS lookup utility commonly used by network administrators and penetration testers for troubleshooting and DNS reconnaissance. It provides more detailed and customizable output than nslookup, including query/response timing and raw record data.
+
+PROCEDURE:
+  1. Install dnsutils if needed: sudo apt install dnsutils.
+  2. Run: dig <target-domain.com> ANY (or dig <domain> for default A record) to see general DNS info.
+  3. Run: dig <target-domain.com> MX +short to list mail servers.
+  4. Run: dig <target-domain.com> NS +short to list name servers.
+  5. Attempt a zone transfer (only if authorized/misconfigured): dig axfr @<nameserver> <target-domain.com>.
+  6. Run: dig -x <target-IP> for reverse DNS lookup.
+  7. Document all records and note any misconfigurations (e.g., a successful unauthorized zone transfer).
+
+RESULT:
+dig successfully enumerated A, MX, and NS records for the target domain; the zone transfer attempt was correctly refused by the properly configured name server.
+
+CONCLUSION:
+dig provides granular and scriptable DNS enumeration capability, and testing zone transfer protection confirms whether a domain's DNS server is securely configured against information disclosure.
+
+==========================================================================================

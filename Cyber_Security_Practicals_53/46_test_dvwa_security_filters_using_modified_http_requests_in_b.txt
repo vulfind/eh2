@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 46
+TEST DVWA SECURITY FILTERS USING MODIFIED HTTP REQUESTS IN BURP SUITE IN THE AUTHORIZED LAB
+==========================================================================================
+
+AIM:
+To use Burp Suite to intercept and modify HTTP requests in order to test and attempt to bypass DVWA's client-side and server-side security filters.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Burp Suite Community Edition
+  2. DVWA installed and accessible
+  3. Firefox configured to proxy through Burp Suite
+
+THEORY:
+Many web applications implement client-side restrictions (e.g., JavaScript input length limits, disabled form fields) that can be trivially bypassed because the browser, not the server, enforces them. Intercepting and editing the raw HTTP request with a proxy like Burp Suite allows a tester to send payloads the client-side interface would normally block, revealing whether server-side validation is actually enforced.
+
+PROCEDURE:
+  1. Configure Firefox to proxy through Burp Suite (127.0.0.1:8080) and install Burp's CA certificate.
+  2. Set DVWA security level to Medium (which includes some client-side restrictions, e.g., maxlength attributes).
+  3. With Burp's Intercept turned ON, submit a form (e.g., the SQL Injection or XSS field) with a short, allowed value.
+  4. In Burp Proxy's Intercept tab, edit the raw request body to insert a longer/blocked payload that the HTML form would not normally allow.
+  5. Forward the modified request and observe the server's response to determine if server-side validation still blocks the payload.
+  6. Repeat with other filtered fields/modules, testing whether filters are enforced client-side only, server-side only, or both.
+  7. Document which filters were successfully bypassed via direct request modification and which held firm.
+
+RESULT:
+By modifying intercepted requests in Burp Suite, several client-side-only restrictions were successfully bypassed, while genuine server-side input validation (present at higher DVWA security levels) continued to block malicious payloads.
+
+CONCLUSION:
+This exercise demonstrates that client-side validation alone provides no real security, reinforcing that all critical input validation and sanitization must be enforced on the server side.
+
+==========================================================================================

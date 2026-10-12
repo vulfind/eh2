@@ -1,0 +1,30 @@
+==========================================================================================
+PRACTICAL NO. 22
+PERFORM A SYN SCAN USING NMAP
+==========================================================================================
+
+AIM:
+To perform a stealthy TCP SYN ('half-open') scan using Nmap to identify open ports with reduced detectability.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed (requires sudo/root)
+  2. Authorized target host on the same network
+
+THEORY:
+A SYN scan (-sS) sends a SYN packet to each target port and analyzes the response: a SYN-ACK indicates an open port (Nmap then sends a RST instead of completing the handshake), while a RST indicates a closed port. Because the handshake is never completed, this scan is faster and less likely to be logged by the target application compared to a full Connect scan, earning it the nickname 'half-open' or 'stealth' scan.
+
+PROCEDURE:
+  1. Open a terminal on Kali Linux.
+  2. Run with root privileges: sudo nmap -sS <target-IP>.
+  3. Compare timing/output against the earlier TCP Connect scan (-sT) results from the same target.
+  4. Add timing options for stealth: sudo nmap -sS -T2 <target-IP>.
+  5. Optionally run with -Pn to skip host discovery if ICMP is blocked: sudo nmap -sS -Pn <target-IP>.
+  6. Document open ports discovered and compare scan speed/log footprint conceptually with -sT.
+
+RESULT:
+The SYN scan identified the same set of open ports as the earlier Connect scan but completed faster, and because connections were never fully established, it generated less obvious connection-level logging on the target.
+
+CONCLUSION:
+The SYN scan is the preferred default scan technique for penetration testers due to its speed and reduced footprint, though it still requires root/administrator privileges to craft raw packets.
+
+==========================================================================================

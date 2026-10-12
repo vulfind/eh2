@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 52
+DEMONSTRATE BASIC LINUX COMMANDS USEFUL FOR PENETRATION TESTING
+==========================================================================================
+
+AIM:
+To demonstrate essential Linux command-line commands commonly used during penetration testing engagements.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux terminal
+
+THEORY:
+A strong command of core Linux commands is fundamental for efficient penetration testing, covering system/network information gathering, file manipulation, process management, and text processing/filtering of tool output, since most security tools are CLI-based on Linux.
+
+PROCEDURE:
+  1. Networking: ifconfig / ip a (interface info), netstat -tulnp (listening ports), ping <host>, route -n (routing table).
+  2. File/Directory: ls -la, cd, pwd, find / -name '<pattern>' 2>/dev/null, locate <file>.
+  3. Permissions: chmod +x script.sh, chown user:group file, ls -l to inspect permissions.
+  4. Process management: ps aux, top, kill <PID>, jobs, bg/fg.
+  5. Text processing: grep 'pattern' file.txt, cat file.txt | sort | uniq, awk '{print $1}' file.txt, sed 's/old/new/' file.txt.
+  6. Archiving/transfer: tar -czvf archive.tar.gz folder/, scp file user@host:/path, wget <url>, curl -I <url>.
+  7. User/privilege: whoami, id, sudo -l, su - <user>.
+  8. Document example output for each command category demonstrated.
+
+RESULT:
+Each command category was successfully demonstrated with sample output, confirming the trainee's familiarity with the core Linux commands required for efficient penetration testing workflows.
+
+CONCLUSION:
+Proficiency with fundamental Linux commands is a prerequisite for effective penetration testing, as the vast majority of security tools and techniques are executed and scripted from the Linux command line.
+
+==========================================================================================

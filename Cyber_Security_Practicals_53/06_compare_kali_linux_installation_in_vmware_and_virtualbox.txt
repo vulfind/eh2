@@ -1,0 +1,34 @@
+==========================================================================================
+PRACTICAL NO. 6
+COMPARE KALI LINUX INSTALLATION IN VMWARE AND VIRTUALBOX
+==========================================================================================
+
+AIM:
+To compare the installation process, performance, and features of Kali Linux on VMware Workstation versus Oracle VirtualBox.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. VirtualBox with Kali Linux installed
+  2. VMware Workstation with Kali Linux installed
+  3. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  4. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  5. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+Both VirtualBox and VMware Workstation are Type-2 hypervisors that let a host run guest operating systems, but they differ in licensing (VirtualBox is open-source/free; VMware Workstation Pro is commercial, Player is free for personal use), performance (VMware typically offers better graphics acceleration and snapshot management), and installation workflow.
+
+PROCEDURE:
+  1. Install Kali Linux in VirtualBox following the steps in Practical 1.
+  2. Install Kali Linux in VMware Workstation following the steps in Practical 5.
+  3. Compare installation wizards: VirtualBox requires separate VM creation then manual ISO install; VMware offers an 'Easy Install' feature for some OSes.
+  4. Compare resource allocation screens, default settings, and Guest Additions/Tools installation steps.
+  5. Boot both VMs and measure boot time, graphics smoothness, and USB/clipboard integration.
+  6. Run a benchmark task (e.g., compiling a small program or running Nmap) on both and note speed differences.
+  7. Tabulate the differences: installation steps, snapshot features, performance, and ease of use.
+
+RESULT:
+Both platforms successfully installed Kali Linux. VMware showed marginally smoother graphics performance and a simpler guided install, while VirtualBox was lighter on system resources and fully open-source.
+
+CONCLUSION:
+Both hypervisors are viable for building a penetration testing lab; VirtualBox is preferable for free, lightweight use, while VMware Workstation suits users wanting advanced snapshot/clone features and better graphics performance.
+
+==========================================================================================

@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 15
+USE GOOGLE DORKING TO FIND PUBLICLY INDEXED FILES AND DIRECTORIES
+==========================================================================================
+
+AIM:
+To use advanced Google search operators (Google Dorking) to discover publicly indexed files, directories, and information leaks related to a target.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Web browser
+  2. Internet connectivity
+  3. Authorized target domain
+
+THEORY:
+Google Dorking (Google Hacking) uses advanced search operators such as site:, filetype:, intitle:, and inurl: to find specific types of content indexed by Google that are often unintentionally exposed, such as configuration files, login portals, or directory listings.
+
+PROCEDURE:
+  1. Open a web browser and navigate to google.com.
+  2. Search: site:<target-domain.com> filetype:pdf to find indexed PDF documents.
+  3. Search: site:<target-domain.com> intitle:"index of" to find exposed directory listings.
+  4. Search: site:<target-domain.com> inurl:admin to locate possible admin login pages.
+  5. Search: site:<target-domain.com> ext:sql | ext:env | ext:log to look for sensitive leaked files.
+  6. Review and document each result, noting any sensitive exposure found.
+  7. Avoid downloading/accessing any unauthorized sensitive data; only document findings.
+
+RESULT:
+Several categories of publicly indexed content were identified for the target domain, including PDF files and, in some cases, directory listing pages, demonstrating information exposure through search engine indexing.
+
+CONCLUSION:
+Google Dorking is a simple yet powerful passive reconnaissance technique that reveals unintentionally exposed files and pages, underscoring the need for proper web server configuration and robots.txt usage.
+
+==========================================================================================

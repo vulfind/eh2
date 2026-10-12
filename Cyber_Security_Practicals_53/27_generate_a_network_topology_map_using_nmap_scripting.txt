@@ -1,0 +1,30 @@
+==========================================================================================
+PRACTICAL NO. 27
+GENERATE A NETWORK TOPOLOGY MAP USING NMAP SCRIPTING
+==========================================================================================
+
+AIM:
+To use Nmap's traceroute and scripting engine (NSE) features to generate a basic network topology map of the lab environment.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed
+  2. Multiple hosts in the authorized lab network
+
+THEORY:
+Nmap's --traceroute option combined with the -sn/-A flags can reveal the network path and hop structure between the attacker and target hosts. Nmap also has a built-in 'Zenmap' GUI (part of the Nmap suite) that can automatically render discovered hosts and routes as a visual topology diagram.
+
+PROCEDURE:
+  1. Install/open Zenmap (Nmap's GUI) on Kali Linux: zenmap.
+  2. In the Target field, enter the lab subnet (e.g., 192.168.1.0/24) and choose the 'Intense scan, all TCP ports' or 'Topology' profile.
+  3. Run the scan and switch to the 'Topology' tab in Zenmap to view the generated network map.
+  4. Alternatively, from the CLI run: nmap --traceroute -sn 192.168.1.0/24 to gather hop data.
+  5. Document each node (host) and the connections/hops shown in the topology view.
+  6. Export or screenshot the topology diagram for the report.
+
+RESULT:
+Zenmap successfully rendered a visual topology diagram showing the lab's hosts and their relative network positions/hops from the Kali attacker machine.
+
+CONCLUSION:
+Visualizing network topology with Nmap/Zenmap helps testers quickly understand the structure of a target network, which assists in planning further scanning and segmentation analysis.
+
+==========================================================================================

@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 14
+PERFORM PASSIVE RECONNAISSANCE USING SHODAN
+==========================================================================================
+
+AIM:
+To use Shodan, the search engine for internet-connected devices, to passively gather information about a target's exposed infrastructure.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Web browser
+  2. Shodan account (free tier)
+  3. Internet connectivity
+  4. Authorized target IP/domain/organization
+
+THEORY:
+Shodan is a search engine that indexes metadata (banners, open ports, services, geolocation) of internet-connected devices by continuously scanning the public internet. Unlike active scanning, querying Shodan is passive from the target's perspective since Shodan, not the analyst, performed the original scan.
+
+PROCEDURE:
+  1. Register for a free Shodan account at shodan.io.
+  2. Log in and use the search bar to query the target, e.g., hostname:<target-domain.com> or net:<target-IP-range>.
+  3. Review returned results showing open ports, running services, and banners for discovered hosts.
+  4. Use filters such as 'port:22', 'org:"Target Org"', or 'country:"IN"' to narrow results.
+  5. Click on individual results to view detailed service banners and historical scan data.
+  6. Record exposed services/ports that may represent a security risk for the organization.
+
+RESULT:
+Shodan returned details of internet-facing devices and services associated with the target, including open ports and service banners, without directly contacting the target systems.
+
+CONCLUSION:
+Shodan is a powerful passive reconnaissance tool that reveals an organization's externally exposed attack surface using previously collected internet-wide scan data.
+
+==========================================================================================

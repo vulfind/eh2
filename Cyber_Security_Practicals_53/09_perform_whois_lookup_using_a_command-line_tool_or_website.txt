@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 9
+PERFORM WHOIS LOOKUP USING A COMMAND-LINE TOOL OR WEBSITE
+==========================================================================================
+
+AIM:
+To perform a WHOIS lookup on a target domain to gather domain registration and ownership information.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with 'whois' utility installed
+  2. Internet connectivity
+  3. Authorized target domain
+
+THEORY:
+WHOIS is a query/response protocol used to look up registration details of a domain name, including registrar, registrant (if not privacy-protected), creation/expiry dates, and name servers. It is a key passive reconnaissance technique used in the information-gathering phase of a penetration test.
+
+PROCEDURE:
+  1. Open a terminal in Kali Linux.
+  2. Install whois if not already present: sudo apt install whois.
+  3. Run the command: whois <target-domain.com>.
+  4. Review the output for Registrar, Registrant Organization, Creation Date, Expiration Date, and Name Servers.
+  5. Alternatively, use an online WHOIS lookup website and enter the same domain for comparison.
+  6. Record all information relevant to the target's infrastructure (name servers, hosting registrar).
+
+RESULT:
+The WHOIS lookup returned domain registration details including registrar name, creation/expiry dates, and associated name servers for the target domain.
+
+CONCLUSION:
+WHOIS lookup is a quick and effective passive reconnaissance method to gather preliminary intelligence about a target organization's domain without directly interacting with its systems.
+
+==========================================================================================

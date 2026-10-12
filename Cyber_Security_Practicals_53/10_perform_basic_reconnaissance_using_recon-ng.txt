@@ -1,0 +1,33 @@
+==========================================================================================
+PRACTICAL NO. 10
+PERFORM BASIC RECONNAISSANCE USING RECON-NG
+==========================================================================================
+
+AIM:
+To use Recon-ng, a full-featured web reconnaissance framework, to gather OSINT about a target domain.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Recon-ng installed
+  2. Internet connectivity
+  3. Authorized target domain
+
+THEORY:
+Recon-ng is a modular, Python-based open-source intelligence (OSINT) framework with a command-line interface similar to Metasploit. It automates many common reconnaissance tasks such as subdomain enumeration, host discovery, and data aggregation from public sources using individually installable modules.
+
+PROCEDURE:
+  1. Launch Recon-ng in Kali Linux terminal by typing: recon-ng.
+  2. Create a new workspace: workspaces create <lab_workspace>.
+  3. Add the target domain: db insert domains and provide the domain name.
+  4. Search for relevant modules: marketplace search hackertarget (or similar recon modules).
+  5. Install a module: marketplace install recon/domains-hosts/hackertarget.
+  6. Load the module: modules load recon/domains-hosts/hackertarget.
+  7. Set the SOURCE option to the target domain and run the module: run.
+  8. Review discovered hosts/subdomains with: show hosts.
+
+RESULT:
+Recon-ng successfully gathered subdomain and host information for the target domain and stored results in the workspace database for later review.
+
+CONCLUSION:
+Recon-ng automates and organizes OSINT data collection efficiently, demonstrating how modular reconnaissance frameworks speed up the information-gathering phase of a penetration test.
+
+==========================================================================================

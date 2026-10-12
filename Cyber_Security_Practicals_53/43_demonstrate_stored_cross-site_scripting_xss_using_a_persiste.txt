@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 43
+DEMONSTRATE STORED CROSS-SITE SCRIPTING (XSS) USING A PERSISTENT TEST PAYLOAD IN DVWA
+==========================================================================================
+
+AIM:
+To demonstrate a stored (persistent) XSS vulnerability in DVWA, where a malicious payload is saved on the server and executes for every visitor.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. DVWA installed and accessible
+  2. Kali Linux with a web browser
+
+THEORY:
+Stored XSS is considered more dangerous than reflected XSS because the malicious payload is permanently saved on the target server (e.g., in a database, such as a guestbook or comment field) and automatically executes in the browser of every user who views the affected page, without requiring a crafted link.
+
+PROCEDURE:
+  1. Log in to DVWA and set security level to Low.
+  2. Navigate to the XSS (Stored) module (commonly a guestbook form).
+  3. Enter a Name and, in the Message field, enter the test payload: <script>alert('Stored XSS')</script>.
+  4. Submit the form and observe the alert executing immediately as the page re-renders the stored entry.
+  5. Reload the page (or revisit it in a new browser session) to confirm the alert fires again, proving persistence.
+  6. Repeat the test at Medium and High security levels, noting how input sanitization/escaping prevents the stored payload from executing.
+  7. Clean up the test entry from the database after the demonstration, and document all findings.
+
+RESULT:
+The stored XSS payload executed on every page load after submission at the Low security level, confirming persistence; input sanitization at Medium and High levels successfully neutralized the payload.
+
+CONCLUSION:
+Stored XSS demonstrates a more severe and persistent risk than reflected XSS since it affects all visitors to the compromised page, underscoring the critical importance of sanitizing and encoding all user-supplied content before storage and display.
+
+==========================================================================================

@@ -1,0 +1,32 @@
+==========================================================================================
+PRACTICAL NO. 50
+FIND WEB APPLICATION VULNERABILITIES USING NIKTO
+==========================================================================================
+
+AIM:
+To use Nikto, an open-source web server scanner, to identify common vulnerabilities and misconfigurations in a target web application.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nikto installed
+  2. DVWA/Metasploitable 2 web server as the authorized target
+
+THEORY:
+Nikto is a command-line web server scanner that tests for thousands of potentially dangerous files/CGIs, outdated server software, and other common misconfigurations such as missing security headers, default files, and directory indexing, making it a fast first-pass web vulnerability assessment tool.
+
+PROCEDURE:
+  1. Confirm the target web server is running and accessible (e.g., http://<target-IP>/ or http://<target-IP>/DVWA/).
+  2. Open a terminal on Kali Linux.
+  3. Run a basic scan: nikto -h http://<target-IP>/.
+  4. Review the output for flagged issues such as outdated server banners, missing security headers (e.g., X-Frame-Options), and exposed interesting files/directories.
+  5. Run an extended scan with SSL support if applicable: nikto -h https://<target-IP>/ -ssl.
+  6. Save results to a report file: nikto -h http://<target-IP>/ -output nikto_report.txt.
+  7. Cross-reference significant findings (e.g., outdated Apache version) with known CVEs.
+  8. Document all findings with their associated risk level.
+
+RESULT:
+Nikto identified multiple issues on the target web server, including an outdated server banner, missing security headers, and several potentially risky default files/directories.
+
+CONCLUSION:
+Nikto provides a fast and effective automated first-pass web vulnerability scan, useful for quickly identifying low-hanging security misconfigurations before deeper manual testing.
+
+==========================================================================================

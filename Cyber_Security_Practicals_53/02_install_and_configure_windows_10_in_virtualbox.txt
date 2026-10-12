@@ -1,0 +1,35 @@
+==========================================================================================
+PRACTICAL NO. 2
+INSTALL AND CONFIGURE WINDOWS 10 IN VIRTUALBOX
+==========================================================================================
+
+AIM:
+To install and configure Windows 10 as a guest operating system in VirtualBox for use as a target/victim machine in lab exercises.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Oracle VirtualBox
+  2. Windows 10 ISO image
+  3. Valid Windows license/evaluation copy
+  4. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  5. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  6. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+A Windows 10 virtual machine is commonly used in security labs as a 'victim' machine to practice exploitation, privilege escalation, malware analysis, and traffic capture in a controlled and legal environment, isolated from the host system and production networks.
+
+PROCEDURE:
+  1. Open VirtualBox and click 'New'; name it 'Windows10', Type=Microsoft Windows, Version=Windows 10 (64-bit).
+  2. Allocate RAM (minimum 4096 MB) and create a virtual hard disk (minimum 40 GB).
+  3. Attach the Windows 10 ISO under Settings > Storage > Optical Drive.
+  4. Start the VM and follow the installer: language/region, 'Install Now', enter/skip product key, choose 'Custom Install', select the virtual disk, and proceed.
+  5. Complete OOBE setup: region, keyboard, account creation (local account for lab use), and privacy settings.
+  6. Install VirtualBox Guest Additions from the Devices menu for better integration.
+  7. Disable Windows auto-update temporarily (optional) to keep the lab environment stable for testing.
+
+RESULT:
+Windows 10 was successfully installed as a VirtualBox VM, booting to the desktop with network connectivity, ready to act as a target machine for subsequent exercises.
+
+CONCLUSION:
+A Windows 10 virtual machine was configured, forming an essential component of the isolated lab setup used for safe and legal vulnerability and exploitation testing.
+
+==========================================================================================

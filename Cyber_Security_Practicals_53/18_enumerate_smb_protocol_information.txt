@@ -1,0 +1,30 @@
+==========================================================================================
+PRACTICAL NO. 18
+ENUMERATE SMB PROTOCOL INFORMATION
+==========================================================================================
+
+AIM:
+To enumerate Server Message Block (SMB) protocol information such as shares, users, and OS details on a target host.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with enum4linux / smbclient / Nmap installed
+  2. Metasploitable 2 or Windows VM as target (same network)
+
+THEORY:
+SMB is a network file-sharing protocol used primarily by Windows systems (and Samba on Linux) to share files, printers, and other resources. Misconfigured SMB services can leak sensitive information such as shared folder names, usernames, and OS/version details, making SMB enumeration a critical reconnaissance step.
+
+PROCEDURE:
+  1. Identify the target IP using netdiscover or nmap -sn <subnet>.
+  2. Run an Nmap SMB scan: nmap -p 139,445 --script smb-os-discovery <target-IP>.
+  3. Use enum4linux for detailed enumeration: enum4linux -a <target-IP>.
+  4. List available shares using smbclient: smbclient -L //<target-IP>/ -N.
+  5. Attempt to connect to a discovered share: smbclient //<target-IP>/<share-name> -N.
+  6. Document discovered shares, usernames, OS version, and workgroup/domain information.
+
+RESULT:
+SMB enumeration revealed the target's OS version, workgroup name, and a list of accessible shares, some of which allowed anonymous (null session) access.
+
+CONCLUSION:
+SMB enumeration demonstrates how an improperly secured file-sharing service can expose significant internal information, reinforcing the need to disable null sessions and restrict share permissions.
+
+==========================================================================================

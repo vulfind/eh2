@@ -1,0 +1,34 @@
+==========================================================================================
+PRACTICAL NO. 4
+TEST NAT AND BRIDGED NETWORKING IN VIRTUALBOX
+==========================================================================================
+
+AIM:
+To configure and test NAT and Bridged networking modes in VirtualBox and compare connectivity between virtual machines.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Oracle VirtualBox with Kali Linux and Windows 10/Metasploitable VMs configured
+  2. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  3. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  4. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+VirtualBox offers several networking modes. NAT allows a VM to access external networks through the host's IP but hides it from the external network, and VMs on NAT individually cannot see each other by default. Bridged networking connects the VM directly to the physical network as if it were a separate physical device on the LAN, obtaining its own IP from the local router, allowing full two-way visibility with other devices on that network.
+
+PROCEDURE:
+  1. For each VM, open Settings > Network > Adapter 1.
+  2. Set Adapter to 'NAT' on both VMs, start them, and run 'ip a'/'ipconfig' to view assigned IPs.
+  3. From Kali, attempt to ping the Windows VM IP (observe failure, since NAT isolates VMs from each other).
+  4. Change Adapter 1 to 'Bridged Adapter' on both VMs and select the active host network interface.
+  5. Restart the VMs, note the new IPs now in the same subnet as the host network.
+  6. From Kali, ping the Windows/Metasploitable VM IP and confirm connectivity.
+  7. Run an Nmap scan from Kali against the bridged target IP to confirm full reachability.
+  8. Document and compare the behavior of both modes.
+
+RESULT:
+Under NAT mode, VMs could reach the internet but not each other directly. Under Bridged mode, both VMs obtained LAN IP addresses and could successfully ping and scan each other.
+
+CONCLUSION:
+NAT is suitable for internet access with isolation, whereas Bridged mode is required for direct inter-VM communication, which is necessary for most penetration testing lab exercises.
+
+==========================================================================================

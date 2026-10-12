@@ -1,0 +1,36 @@
+==========================================================================================
+PRACTICAL NO. 7
+INSTALL DVWA ON A VIRTUAL MACHINE AND TEST ACCESS FROM KALI LINUX
+==========================================================================================
+
+AIM:
+To install Damn Vulnerable Web Application (DVWA) on a VM and verify access to it from a Kali Linux machine.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. XAMPP/LAMP stack (Apache, PHP, MySQL/MariaDB)
+  2. DVWA source files (from GitHub)
+  3. Kali Linux (attacker)
+  4. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  5. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  6. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+DVWA is a PHP/MySQL web application deliberately built with vulnerabilities, intended to help security professionals practice their skills in a legal, controlled environment. It demonstrates common web vulnerabilities such as SQL injection, XSS, and CSRF.
+
+PROCEDURE:
+  1. Install a LAMP/XAMPP stack on the chosen VM (e.g., a Linux/Windows server VM).
+  2. Download DVWA source code from its official GitHub repository and extract it into the web server's root directory (e.g., /var/www/html/DVWA).
+  3. Rename config/config.inc.php.dist to config.inc.php and set database credentials.
+  4. Start Apache and MySQL services; browse to http://localhost/DVWA/setup.php and click 'Create / Reset Database'.
+  5. Log in to DVWA with default credentials (admin/password).
+  6. Note the server VM's IP address (ifconfig/ipconfig).
+  7. From Kali Linux, open a browser and navigate to http://<server-IP>/DVWA/ to confirm remote access.
+  8. Verify the DVWA login page loads correctly over the network.
+
+RESULT:
+DVWA was installed and configured successfully on the server VM, and the login page was successfully accessed and logged into from the Kali Linux machine over the network.
+
+CONCLUSION:
+A legal, vulnerable web application target was deployed, enabling hands-on practice of web application attack techniques from a separate attacker machine, closely simulating a real penetration test scenario.
+
+==========================================================================================

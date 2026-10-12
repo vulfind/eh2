@@ -1,0 +1,31 @@
+==========================================================================================
+PRACTICAL NO. 26
+USE NMAP TO DISCOVER LIVE HOSTS IN AN AUTHORIZED LAB NETWORK
+==========================================================================================
+
+AIM:
+To use Nmap's host discovery features to identify all live hosts within an authorized lab subnet.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Kali Linux with Nmap installed
+  2. Multiple VMs (Kali, Windows, Metasploitable) on the same subnet
+
+THEORY:
+Host discovery (also called 'ping sweep') is used to determine which IP addresses within a given subnet are active before performing detailed port scans, saving time by avoiding scans against non-existent hosts.
+
+PROCEDURE:
+  1. Determine the lab's subnet (e.g., 192.168.1.0/24) from ifconfig/ip a on Kali.
+  2. Run a ping sweep: nmap -sn 192.168.1.0/24.
+  3. Review the output listing all hosts that responded as 'up'.
+  4. Cross-verify results using netdiscover: netdiscover -r 192.168.1.0/24.
+  5. For hosts that block ICMP, try an ARP scan (same subnet): nmap -sn -PR 192.168.1.0/24.
+  6. Compile a list of discovered live host IPs and their MAC vendor information (if shown).
+  7. Use this host list as input for subsequent detailed Nmap scans.
+
+RESULT:
+Nmap successfully identified all active VMs in the lab subnet, including Kali, Windows, and Metasploitable, each confirmed as 'up' with corresponding IP and MAC information.
+
+CONCLUSION:
+Host discovery is an efficient first step in network reconnaissance, narrowing the scope of subsequent, more time-consuming scans to only active hosts.
+
+==========================================================================================

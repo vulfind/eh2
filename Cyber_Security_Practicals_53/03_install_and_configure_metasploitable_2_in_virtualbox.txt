@@ -1,0 +1,34 @@
+==========================================================================================
+PRACTICAL NO. 3
+INSTALL AND CONFIGURE METASPLOITABLE 2 IN VIRTUALBOX
+==========================================================================================
+
+AIM:
+To install and configure Metasploitable 2 as an intentionally vulnerable target machine within VirtualBox.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. Oracle VirtualBox
+  2. Metasploitable 2 VMDK image (from Rapid7/SourceForge)
+  3. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  4. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  5. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+Metasploitable 2 is an intentionally vulnerable Linux VM built by Rapid7 for practicing penetration testing legally. It contains numerous deliberately misconfigured and outdated services (FTP, SMB, Telnet, MySQL, etc.) that mirror real-world vulnerabilities.
+
+PROCEDURE:
+  1. Download the Metasploitable 2 zip file and extract the .vmdk disk image.
+  2. Open VirtualBox, click 'New', name it 'Metasploitable2', Type=Linux, Version=Ubuntu (64-bit).
+  3. Allocate RAM (512 MB–1024 MB is sufficient).
+  4. Choose 'Use an existing virtual hard disk file' and select the extracted .vmdk file.
+  5. Set the Network Adapter to the same type (NAT Network/Host-Only) as the Kali VM so they can communicate.
+  6. Start the VM and log in with default credentials (msfadmin/msfadmin).
+  7. Run 'ifconfig' to note the assigned IP address for later scanning exercises.
+
+RESULT:
+Metasploitable 2 booted successfully and its IP address was identified, confirming it is reachable from the Kali Linux attacker machine on the same virtual network.
+
+CONCLUSION:
+A deliberately vulnerable target machine was successfully deployed, enabling safe, hands-on practice of scanning and exploitation techniques without legal or ethical risk.
+
+==========================================================================================

@@ -1,0 +1,34 @@
+==========================================================================================
+PRACTICAL NO. 8
+CONFIGURE DVWA SECURITY LEVELS: LOW, MEDIUM, AND HIGH
+==========================================================================================
+
+AIM:
+To configure and understand the different security levels available in DVWA and their effect on vulnerability exploitability.
+
+SYSTEM / SOFTWARE / HARDWARE REQUIREMENTS:
+  1. DVWA installed and accessible
+  2. Web browser
+  3. PC/Laptop with minimum 8 GB RAM (16 GB recommended), 100+ GB free disk space
+  4. Processor supporting virtualization (Intel VT-x / AMD-V enabled in BIOS)
+  5. Internet connection (for downloading ISO/tool files and updates)
+
+THEORY:
+DVWA provides four security levels (Low, Medium, High, Impossible) that apply increasing input validation and sanitization to its vulnerable modules. Lower levels have little to no filtering, making exploitation straightforward, while higher levels implement partial or full mitigations (such as input sanitization, prepared statements, and CSRF tokens), simulating progressively better-secured real applications.
+
+PROCEDURE:
+  1. Log in to the DVWA web interface with valid credentials.
+  2. Navigate to 'DVWA Security' from the left-hand menu.
+  3. Select 'Low' security level and click Submit; test a vulnerability (e.g., SQL Injection) to observe unrestricted behavior.
+  4. Switch to 'Medium' and retest the same vulnerability, observing partial filtering (e.g., basic escaping) that requires a modified payload.
+  5. Switch to 'High' and retest, observing stricter validation (e.g., use of regex, prepared statements) that blocks the earlier payloads.
+  6. Document the source code differences for each level by viewing 'View Source' within DVWA for the given module.
+  7. Record the differences in required attack technique at each level.
+
+RESULT:
+Each DVWA security level was configured and tested; Low level allowed direct exploitation, Medium required payload modification, and High level blocked most common attacks, confirming defense-in-depth concepts.
+
+CONCLUSION:
+Understanding DVWA's security levels illustrates how coding practices and input validation directly affect application security, reinforcing the importance of secure coding during web development.
+
+==========================================================================================
